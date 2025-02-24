@@ -1,0 +1,16 @@
+public class Main {
+    public static void main(String[] args) {
+        PayrollManager payrollManager = new PayrollManager();
+
+        // Add a certified payroll record for an employee from Gusto Payroll
+        CertifiedPayroll payroll = new CertifiedPayroll("001", "Samuel Medina", 15000.00, "689138705652");
+        payrollManager.addPayrollRecord(payroll);
+
+        // Process the payroll for the employee
+        try {
+            payrollManager.processPayroll("001");
+        } catch (Exception e) {
+            System.out.println("Payroll processing failed: " + e.getMessage());
+        }
+    }
+}
